@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <title>Snake Game</title>
+    <link rel="stylesheet" href="../css/snake.css">
 </head>
+
 <body>
-  <h1>Snake Game</h1>
+
+<div class="game-container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1 class="logo">🐍 Snake Game</h1>
+        <p id="playerName"></p>
+    </div>
+
+    <!-- Score -->
+    <div class="score-board">
+        Score: <span id="score">0</span>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+    <!-- Controls -->
+    <div class="controls">
+        <!--    onclick="startGame()"-->
+        <button>▶ Start</button>
+        <!--    onclick="restartGame()"-->
+        <button>🔄 Restart</button>
+    </div>
+
+</div>
+
+<script src="../js/snake.js"></script>
+
 </body>
 </html>

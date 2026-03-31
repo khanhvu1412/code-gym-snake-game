@@ -1,3 +1,13 @@
-console.log("Hello Snake")
+function togglePassword(id, icon){
 
-// Test nhánh mới
+    let input = document.getElementById(id);
+
+    if(input.type === "password"){
+        input.type = "text";
+        icon.textContent = "🙉";
+    }else{
+        input.type = "password";
+        icon.textContent = "🙈";
+    }
+
+}
