@@ -9,13 +9,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../frontend")));
 
-const FILE = "data.json";
+const FILE = path.join(__dirname, "data.json");
 
-function readData() {
-    return JSON.parse(fs.readFileSync(FILE));
+function readData(){
+    return JSON.parse(fs.readFileSync(FILE, "utf-8"));
 }
 
-function writeData(data) {
+function writeData(data){
     fs.writeFileSync(FILE, JSON.stringify(data, null, 2));
 }
 

@@ -26,12 +26,7 @@ if (registerForm) {
                 password
             })
         })
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error("Server lỗi");
-                }
-                return res.json();
-            })
+            .then(res => res.json())
             .then(data => {
                 if (data.success) {
                     alert("Đăng ký thành công!");
@@ -40,6 +35,10 @@ if (registerForm) {
                     alert(data.message);
                 }
 
+            })
+            .catch(err => {
+                console.error(err);
+                alert("Có lỗi xảy ra!");
             });
 
     });
@@ -65,11 +64,11 @@ if (loginForm) {
                 password
             })
         })
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error("Server lỗi");
-                }
-                return res.json();
+            .then(res => res.text())
+            .then(text => {
+                console.log("Server trả về:", text);
+
+                return JSON.parse(text);
             })
             .then(data => {
                 if (data.success) {
