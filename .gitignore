@@ -28,9 +28,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-
-### Code ###
-/package-lock.json/
-/package.json/
-
-/src/backend/data.json/
