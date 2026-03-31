@@ -1,0 +1,25 @@
+{
+  "name": "project-game-snake",
+  "version": "1.0.0",
+  "description": "Snake Game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanhvu1412/code-gym-snake-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khanhvu1412/code-gym-snake-game/issues"
+  },
+  "homepage": "https://github.com/khanhvu1412/code-gym-snake-game#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
