@@ -7,15 +7,15 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../frontend")));
+
 
 const FILE = path.join(__dirname, "data.json");
 
-function readData(){
+function readData() {
     return JSON.parse(fs.readFileSync(FILE, "utf-8"));
 }
 
-function writeData(data){
+function writeData(data) {
     fs.writeFileSync(FILE, JSON.stringify(data, null, 2));
 }
 
@@ -31,6 +31,21 @@ app.get("/snake", (req, res) => {
 app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/pages/register.html"));
 });
+
+// ======Get User=====
+app.get("/user/:id", (req, res) => {
+    let id = req.params.id;
+
+    let data = readData();
+
+    let user = data.users.find(u => u.id == id);
+
+    if (user) {
+        res.json(user);
+    } else {
+        res.status(404).json({message: "Không tìm thấy user!"});
+    }
+})
 
 // ======Register=====
 app.post("/register", (req, res) => {
@@ -94,6 +109,8 @@ app.post("/score", (req, res) => {
 app.listen(3000, () => {
     console.log("Server chạy tại http://localhost:3000");
 })
+
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 
 
