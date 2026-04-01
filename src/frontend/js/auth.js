@@ -28,6 +28,8 @@ if (registerForm) {
         })
             .then(res => res.json())
             .then(data => {
+                console.log("Server trả về: ", data);
+
                 if (data.success) {
                     alert("Đăng ký thành công!");
                     window.location.href = "/pages/login.html";
@@ -64,13 +66,10 @@ if (loginForm) {
                 password
             })
         })
-            .then(res => res.text())
-            .then(text => {
-                console.log("Server trả về:", text);
-
-                return JSON.parse(text);
-            })
+            .then(res => res.json())
             .then(data => {
+                console.log("Server trả về: ", data);
+
                 if (data.success) {
                     alert("Đăng nhập thành công!");
 
